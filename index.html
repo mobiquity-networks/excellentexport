@@ -19,14 +19,17 @@
 
         <a download="somedata.xls" href="#" onclick="return ExcellentExport.excel(this, 'datatable', 'Sheet Name Here');">Export to Excel</a>
         <br/>
-
+        <a download="somedata.xls" href="#" onclick="return generateExcel(this);">Export to Excel from a Javascript array</a>
+        <br/>
+        <a download="somedata.xls" href="#" onclick="return ExcellentExport.fromDom('datatable').attach('header', '<p>Header '+(new Date().toString())+'</p>').attach('footer', '<p>Footer '+(new Date().toString())+'</p>').downloadExcel(this);">Export to Excel and put a header and a footer in the table</a>
+        <br/>
         <a download="somedata.csv" href="#" onclick="return ExcellentExport.csv(this, 'datatable');">Export to CSV - UTF8</a>
         <br/>
         <a download="somedata.csv" href="#" onclick="return ExcellentExport.csv(this, 'datatable', ';');">Export to CSV - Using semicolon ";" separator - UTF8</a>
         <br/>
         <a download="somedata.csv" href="#" onclick="return generateCsv(this);">Export to CSV - UTF8 from a Javascript array</a>
         <br/>
-        <a download="somedata.xls" href="#" onclick="return generateExcel(this);">Export to Excel from a Javascript array</a>
+        <a download="somedata.csv" href="#" onclick="return ExcellentExport.fromDom('datatable').attach('header', ['Header '+(new Date().toString())]).attach('footer', ['Footer '+(new Date().toString())]).downloadCsv(this);">Export to Csv and put a header and a footer in the table</a>
         <br/>
 
         <table id="datatable">
